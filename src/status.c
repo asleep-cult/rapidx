@@ -1,6 +1,7 @@
+#include <stddef.h>
 #include <rapidx/status.h>
 
-char *rx_http_status_phrase(enum RxHTTPStatus status, enum RxError *error) {
+char *rx_http_status_phrase(RxHTTPStatus status, RxError *error) {
     switch (status) {
     case CONTINUE: return "Continue";
     case SWITCHING_PROTOCOLS: return "Switching Protocols";
@@ -71,7 +72,7 @@ char *rx_http_status_phrase(enum RxHTTPStatus status, enum RxError *error) {
     return NULL;
 }
 
-char *rx_http_status_code(enum RxHTTPStatus status, enum RxError *error) {
+char *rx_http_status_code(RxHTTPStatus status, RxError *error) {
     switch (status) {
     case CONTINUE: return "100";
     case SWITCHING_PROTOCOLS: return "102";

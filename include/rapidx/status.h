@@ -1,7 +1,6 @@
-#include <stddef.h>
 #include "error.h"
 
-enum RxHTTPStatus {
+typedef enum RxHTTPStatus {
     CONTINUE = 100,
     SWITCHING_PROTOCOLS = 102,
     EARLY_HINTS = 103,
@@ -67,7 +66,7 @@ enum RxHTTPStatus {
     LOOP_DETECTED = 508,
     NOT_EXTENDED = 510,
     NETWORK_AUTHENTICATION_REQUIRED = 511,
-};
+} RxHTTPStatus;
 
-char *rx_http_status_phrase(enum RxHTTPStatus status, enum RxError *error);
-char *rx_http_status_code(enum RxHTTPStatus status, enum RxError *error);
+char *rx_http_status_phrase(RxHTTPStatus status, RxError *error);
+char *rx_http_status_code(RxHTTPStatus status, RxError *error);
